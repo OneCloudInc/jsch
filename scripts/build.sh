@@ -16,7 +16,7 @@ exit=0
 eval "${BUILD_CMD}" || exit=$?
 
 # RM currently requires all JAR files to contain a pom.xml for publishing; sources/javadocs don't (and shouldn't).
-# Note 1.4.22 - BUILDTOOLS-3344 was closed with a disposition of 'Will Not Do'.
+# BUILDTOOLS-3344 was closed with a disposition of 'Will Not Do'.
 # For the forseeable future, need to inject a pom.xml into the javadocs jar
 find ./target -name "jsch-*-*javadoc.jar" | xargs -I '{}' jar uvf {} pom.xml
 

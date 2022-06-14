@@ -7,7 +7,7 @@ registries:
     password: "${{secrets.WORKIVA_ARTIFACTORY_JFROG_PASSWORD}}"
 
 updates:
-  - package-ecosystem: "gradle"
+  - package-ecosystem: "maven"
     directory: "/"
     registries:
       - maven-repository-workivaeast-jfrog-io-workivaeast-maven-prod

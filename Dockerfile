@@ -5,7 +5,6 @@ RUN yum install tar gzip -y
 
 COPY pom.xml /build/pom.xml
 
-# run to pull down the gradle wrapper and cache that on its own layer
 RUN mvn --version
 
 COPY . .
@@ -16,6 +15,7 @@ ARG GIT_TAG
 # Build the application.
 #
 RUN ./scripts/build.sh
+
 # Collect assembled jar for publishing
 ARG BUILD_ARTIFACTS_JAVA=/build/target/*.jar
 
