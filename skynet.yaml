@@ -1,0 +1,17 @@
+# Testing with Skynet - https://github.com/Workiva/skynet/tree/master/docs
+name: jsch-tests
+image: amazoncorretto:8
+description: run jsch unit tests
+timeout: 300 #5 minutes
+size: small
+contact: support-onecloud
+
+run:
+  on-pull-request: yes
+  on-tag: yes
+  when-branch-name-is:
+    - ^refs/tags/.+
+    - master
+
+scripts:
+  - echo 'This repository does not contain tests.'
